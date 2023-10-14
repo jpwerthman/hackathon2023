@@ -1,0 +1,11 @@
+.response-container {
+    width: 100%;
+    height: 80%;
+    background-color: #565869;
+    display: flex;
+    justify-content: center;
+    /* 70% of the parent element's height (App) */
+    /* Add any additional styling you need */
+}
+
+/* Response.css */
