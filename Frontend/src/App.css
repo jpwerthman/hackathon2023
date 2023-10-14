@@ -86,10 +86,10 @@ nav {
 }
 #botMessage pre {
   margin: 0;
-  padding: 0;
+  /* padding: 0;
   text-indent: 0;
   white-space: pre-wrap;
-  position: relative;
+  position: relative; */
   top: -45px;
 }
 pre {
@@ -290,7 +290,7 @@ form button {
   background: rgb(65, 65, 78);
   border: none;
   position: absolute;
-  top: 20%;
+  top: 10%;
   right: 15px;
   width: 35px;
   height: 45px;

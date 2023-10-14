@@ -7,4 +7,4 @@ class UserMessage(BaseModel):
 
 class MessageResponse(BaseModel):
     status: int
-    message: str
+    botResponse: str

@@ -28,6 +28,6 @@ def read_root():
 # Define another route with a dynamic path parameter
 @app.post("/message")
 def read_item(message: UserMessage):
-    response_msg = MessageResponse(status=200, message=message.message)
+    response_msg = MessageResponse(status=200, botResponse=message.message)
     response_data = JSONResponse(status_code=200, content=response_msg.dict())  # Convert MessageResponse to a dictionary
     return response_data
