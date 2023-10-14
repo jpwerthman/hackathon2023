@@ -71,24 +71,6 @@ const Home = () => {
 
   return (
     <>
-      <header>
-        <div className="menu">
-          <button onClick={() => setShowMenu(true)}>
-            <svg
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="#d9d9e3"
-              strokeLinecap="round"
-            >
-              <path d="M21 18H3M21 12H3M21 6H3" />
-            </svg>
-          </button>
-        </div>
-        <h1>TalkBot</h1>
-      </header>
 
       {showMenu && (
         <nav>

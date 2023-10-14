@@ -144,12 +144,7 @@ nav svg {
   color: #d1d5db;
   font-size: 16px;
 }
-#introsection::before,
-#introsection::after {
-  content: "<HomePage/>";
-  float: left;
-  color: rgb(0, 134, 244);
-}
+
 #introsection {
   text-align: left;
   padding: 20px;
