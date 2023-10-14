@@ -1,0 +1,9 @@
+.prompt-container {
+    width: 100%;
+    height: 20%;
+    /* background-color: #565869; */
+    display: flex;
+    justify-content: center;
+    /* 70% of the parent element's height (App) */
+    /* Add any additional styling you need */
+}
