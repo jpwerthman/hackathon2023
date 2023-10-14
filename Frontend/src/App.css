@@ -67,6 +67,7 @@ nav {
   align-items: center;
   column-gap: 20px;
   text-decoration: none;
+  margin-right: -64px;
 }
 .navPrompt p {
   font-size: 14px;
@@ -266,7 +267,7 @@ nav svg {
   bottom: 0;
   position: relative;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
   max-height: 200px;
   height: 55px;
   background-color: #41414e;
