@@ -35,14 +35,14 @@
   border-radius: 5px;
   padding: 12px;
   margin-top: 5px;
-  background-color: #10a37f;
+  background-color: #FF6F61;
   color: #fff;
   cursor: pointer;
   position: static;
 }
 
 .signupFormContainer button:hover {
-  background: #16c399;
+  background: #FFCB2D;
 }
 
 .signupFormContainer span {

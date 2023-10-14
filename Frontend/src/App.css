@@ -344,13 +344,13 @@ form button {
   padding: 10px 25px;
   border-radius: 7px;
   color: #fff;
-  background: #10a37f;
+  background: #FF6F61;
   border: none;
   font-size: 16px;
   cursor: pointer;
 }
 #loginButton:hover {
-  background-color: rgb(26, 127, 100);
+  background-color: #FFCB2D;
 }
 
 @media screen and (min-width: 768px) {
