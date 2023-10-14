@@ -38,11 +38,12 @@ const Home = () => {
             body: JSON.stringify({ message: inputPrompt }),
           });
           const data = await response.json();
+          console.log(data);
           setChatLog([
             ...chatLog,
             {
               chatPrompt: inputPrompt,
-              botMessage: data.botResponse,
+              botMessage: data.message,
             },
           ]);
           setErr(false);
