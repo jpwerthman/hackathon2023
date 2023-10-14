@@ -21,7 +21,8 @@ const NavLinks = ({ svg, link, text, setChatLog }) => {
       to={link}
       target={link && "_blank"}
       rel="noreferrer"
-      style={{ textDecoration: "none" }}
+      style={{ textDecoration: "none",
+    marginRight: "-64px" }}
       onClick={() => handleClick(text)}
     >
       <div className="navPrompt">
