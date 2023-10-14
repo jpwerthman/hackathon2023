@@ -6,7 +6,7 @@ API_KEY = os.environ.get('OPENAI_API_KEY')
 print(os.environ.get('OPENAI_API_KEY'))
 
 print(API_KEY)
-openai.api_key = 
+openai.api_key = ""
 
 class Bot:
     def __init__(self):
