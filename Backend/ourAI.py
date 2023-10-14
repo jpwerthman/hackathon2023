@@ -2,18 +2,13 @@ import openai
 import json
 import os
 
-API_KEY = os.environ.get('OPENAI_API_KEY')
-print(os.environ.get('OPENAI_API_KEY'))
-
-print(API_KEY)
-openai.api_key = ""
+openai.api_key = "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"
 
 class Bot:
     def __init__(self):
         self.available_functions = {
             "get_transaction_info": self.get_transaction_info,
         }
-        # Dummy transaction data
         self.transaction_data = {
             "12345": {
                 "balance": "$1000",
@@ -29,14 +24,14 @@ class Bot:
         account_data = self.transaction_data.get(account_number)
         if not account_data:
             return json.dumps({"error": "Account not found."})
-        
+
         return json.dumps({
             "balance": account_data["balance"],
             "recent_transactions": account_data["recent_transactions"][transaction_type]
         })
 
-    def run_conversation(self):
-        messages = [{"role": "user", "content": "What are my recent deposit transactions for account 12345?"}]
+    def run_conversation(self, initial_message):
+        messages = [{"role": "user", "content": initial_message}]
         functions = [
             {
                 "name": "get_transaction_info",
@@ -64,7 +59,7 @@ class Bot:
             functions=functions,
             function_call="auto",
         )
-        
+
         response_message = response["choices"][0]["message"]
         if response_message.get("function_call"):
             function_name = response_message["function_call"]["name"]
@@ -85,8 +80,6 @@ class Bot:
                 model="gpt-3.5-turbo-0613",
                 messages=messages,
             )
-            return second_response
-
-
-bot = Bot()
-print(bot.run_conversation())
+            return second_response["choices"][0]["message"]["content"]
+        else:
+            return response_message["content"]
