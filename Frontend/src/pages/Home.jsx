@@ -32,13 +32,12 @@ const Home = () => {
 
       async function callAPI() {
         try {
-          const response = await fetch("localhost:8000/bot`", {
+          const response = await fetch("http://localhost:8000/message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: inputPrompt }),
           });
           const data = await response.json();
-          console.log(data);
           setChatLog([
             ...chatLog,
             {
