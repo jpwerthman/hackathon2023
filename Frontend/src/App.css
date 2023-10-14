@@ -139,10 +139,10 @@ nav svg {
 }
 .chatBox {
   flex: 1;
-  background-color: #353540;
+  background-color: #e0e0e0;
   position: relative;
-  line-height: 24px;
-  color: #d1d5db;
+  line-height: 30px;
+  color: black;
   font-size: 16px;
 }
 
@@ -211,7 +211,7 @@ nav svg {
 }
 .botMessageMainContainer {
   width: 100%;
-  background-color: #444654;
+  background-color: #C4C4C4;
   position: relative;
 }
 .botMessageWrapper {
@@ -270,7 +270,7 @@ nav svg {
   width: 90%;
   max-height: 200px;
   height: 55px;
-  background-color: #41414e;
+  background-color: #aeaeae;
   border-radius: 5px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
   display: flex;
@@ -279,7 +279,7 @@ nav svg {
   padding: 10px;
   flex: 1;
   resize: none;
-  background-color: #41414e;
+  background-color: #aeaeae;
   color: #fff;
   font-size: 16px;
   outline: none;
@@ -287,7 +287,7 @@ nav svg {
   overflow-y: hidden;
 }
 form button {
-  background: rgb(65, 65, 78);
+  background: #aeaeae;
   border: none;
   position: absolute;
   top: 10%;
