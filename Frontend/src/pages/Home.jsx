@@ -32,7 +32,7 @@ const Home = () => {
 
       async function callAPI() {
         try {
-          const response = await fetch("https://talk-bot.onrender.com/", {
+          const response = await fetch("localhost:8000/bot`", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: inputPrompt }),
@@ -115,14 +115,6 @@ const Home = () => {
           </div>
         </nav>
       )}
-
-      <aside className="sideMenu">
-        <NavContent
-          chatLog={chatLog}
-          setChatLog={setChatLog}
-          setShowMenu={setShowMenu}
-        />
-      </aside>
 
       <section className="chatBox">
         {chatLog.length > 0 ? (
