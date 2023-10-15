@@ -91,6 +91,7 @@ nav {
   white-space: pre-wrap;
   position: relative; */
   top: -45px;
+  overflow-wrap: break-word;
 }
 pre {
   font-family: var(--text-font);

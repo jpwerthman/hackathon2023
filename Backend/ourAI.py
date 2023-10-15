@@ -8,7 +8,7 @@ dotenv.load_dotenv()
 key = os.getenv("OPENAI_API_KEY");
 print(key);
 
-openai.api_key = 'our_api_key'
+openai.api_key = ''
 
 class Bot:
     def __init__(self):
