@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from ourAI import Bot
 from auth import AuthHandler
+import requests
 
 app = FastAPI()
 
@@ -28,6 +29,7 @@ app.add_middleware(
 
 auth_handler = AuthHandler()
 users = []
+customerId = 7006556796
 
 # Define a route using a decorator
 @app.get("/")
@@ -80,3 +82,25 @@ async def login(auth_details: AuthDetailsRequest, response: Response):
                         secure=True,
                         expires=expire.strftime("%a, %d %b %Y %H:%M:%S GMT"))
     return response
+
+@app.get("/getTransactions")
+async def getTransactions(request: Request):
+    url = 'https://api.finicity.com/aggregation/v3/customers/7006574789/transactions?fromDate=1000000000&toDate=1665309262'
+
+    # Headers
+    headers = {
+        'Finicity-App-Key': 'd4f1adef749e28e08b7303189c08f24d',
+        'Accept': 'application/json',
+        'Finicity-App-Token': 'b65QjYdAW7paBbT9P1gk',
+        'Cookie': 'incap_ses_113_2596171=9Nj2JG7ac0nQcRkr8HWRATt6K2UAAAAACTkdlOe5NJcFupIkn6q4wQ==; nlbi_2596171=laaqSedd/xU296k5pbFNgwAAAAAUsUNiycBcDdOAEOgld96O; visid_incap_2596171=DrcJ3851SKWp6sRIbBPnoZkuK2UAAAAAQUIPAAAAAAD9ok+1RbF+HXYtc6pdOaNV'
+    }
+
+    # Making the GET request
+    response = requests.get(url, headers=headers)
+    bot = Bot()
+    # Check the response
+    allTrans = response.json().get('transactions')
+    allTrans = ourBot.JSONtoCSV(allTrans)
+    ourBot.set_transaction_info(allTrans)
+    
+

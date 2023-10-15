@@ -147,20 +147,3 @@ data = {
         },
     ]
 }
-
-def JSONtoCSV(data):
-    # Normalize the json data
-    df = json_normalize(data['transactions'])
-
-    # print(df.columns)
-
-    selected_columns = ['amount', 'description',
-        'postedDate', 'transactionDate', 'createdDate',
-        'categorization.normalizedPayeeName', 'categorization.category',
-        'categorization.bestRepresentation', 'categorization.country']
-    new_df = df[selected_columns]
-    csv_string = new_df.to_csv(index=False)
-    print(csv_string)
-    return csv_string
-
-JSONtoCSV(data)
