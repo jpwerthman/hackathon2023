@@ -13,13 +13,33 @@ const SignupForm = () => {
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = async(e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const user = {};
     dispatch({ type: "LOGIN", payload: user });
+
+    fetch('http://localhost:8000/getTransactions/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Response data:', data);
+      })
+      .catch(error => {
+        console.error('Error posting data:', error);
+      });
+
     navigate("/");
   };
-    
+
+
   const handleSignInWithGoggle = async () => {
     console.log('Login with Google not implemented!')
   };

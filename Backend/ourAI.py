@@ -8,13 +8,11 @@ dotenv.load_dotenv()
 
 key = os.getenv("OPENAI_API_KEY")
 
-openai.api_key = ''
+openai.api_key = key
 
 class Bot:
     def __init__(self):
-        self.transaction_data = '''
-amount,description,postedDate,transactionDate,createdDate,categorization.normalizedPayeeName,categorization.category,categorization.bestRepresentation,categorization.country
-...''' # The rest of your transaction data here
+        self.transaction_data = ''' ''' # The rest of your transaction data here
 
     def get_transaction_info(self):
         return self.transaction_data
@@ -25,8 +23,8 @@ amount,description,postedDate,transactionDate,createdDate,categorization.normali
 
     def _format_system_message(self, user_message):
         template = f'''
-            You are an expert financial manager. You will help users with questions about their transactional data, based on a given CSV string. 
-            User's question:
+              [Financial Manager Mode Activated]
+                Objective: Assist the user in interpreting their transactional data based on the provided CSV data. Respond with relevant transaction details.
             {user_message}
 
             Data:
@@ -68,17 +66,23 @@ amount,description,postedDate,transactionDate,createdDate,categorization.normali
 
         return response_content
     
-        
     def JSONtoCSV(self, data):
         # Normalize the json data
         df = json_normalize(data)
 
-        # print(df.columns)
-
-        selected_columns = ['amount', 'description',
-            'postedDate', 'transactionDate', 'createdDate',
-            'categorization.normalizedPayeeName', 'categorization.category',
-            'categorization.bestRepresentation', 'categorization.country']
+        # Selected columns
+        selected_columns = ['amount', 'description', 'postedDate', 
+                            'transactionDate', 'createdDate', 
+                            'categorization.normalizedPayeeName', 
+                            'categorization.category', 
+                            'categorization.bestRepresentation', 
+                            'categorization.country']
         new_df = df[selected_columns]
         csv_string = new_df.to_csv(index=False)
+        print("Length", len(csv_string))
+
+        # Truncate CSV data if too long
+        max_length = 2048  # Adjust this value based on your needs
+        if len(csv_string) > max_length:
+            return csv_string[-max_length:]
         return csv_string

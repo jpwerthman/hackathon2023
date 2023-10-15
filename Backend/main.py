@@ -38,7 +38,7 @@ def read_root():
 
 # Define another route with a dynamic path parameter
 @app.post("/message")
-def read_item(message: UserMessage, username=Depends(auth_handler.authWrapper)):
+def read_item(message: UserMessage):
     # Call the function that runs the conversation
     response = ourBot.run_conversation(message.message)
     print(response)
@@ -83,7 +83,7 @@ async def login(auth_details: AuthDetailsRequest, response: Response):
                         expires=expire.strftime("%a, %d %b %Y %H:%M:%S GMT"))
     return response
 
-@app.get("/getTransactions")
+@app.post("/getTransactions")
 async def getTransactions(request: Request):
     url = 'https://api.finicity.com/aggregation/v3/customers/7006574789/transactions?fromDate=1000000000&toDate=1665309262'
 
@@ -102,5 +102,6 @@ async def getTransactions(request: Request):
     allTrans = response.json().get('transactions')
     allTrans = ourBot.JSONtoCSV(allTrans)
     ourBot.set_transaction_info(allTrans)
+    print("Get transaction", allTrans)
     
 
