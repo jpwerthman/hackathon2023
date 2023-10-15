@@ -15,12 +15,13 @@ const SignupForm = () => {
 
   const handleLogin = async(e) => {
       const user = {};
+      e.preventDefault();
       dispatch({ type: "LOGIN", payload: user });
-      navigate('/')
+      // navigate('/')
       const url = 'https://connect2.finicity.com?customerId=7006571712&fromDate=1607450357&language=en&origin=url&partnerId=2445584332781&redirectUri=https%3A%2F%2Ftinyurl.com%2F2mcau2x4&signature=77076250ea495686f0c3d2178e3356473ce8dea4540b01833015a27252683801&timestamp=1697341425442&ttl=1697348625442&webhookContentType=application%2Fjson'
       window.location.href = url
   };
-
+    
   const handleSignInWithGoggle = async () => {
     console.log('Login with Google not implemented!')
   };
