@@ -14,9 +14,11 @@ const SignupForm = () => {
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
+    e.preventDefault();
     const user = {};
     dispatch({ type: "SIGNUP", payload: user });
-    navigate("/");
+    const url = 'https://connect2.finicity.com?customerId=7006575866&fromDate=1607450357&language=en&origin=url&partnerId=2445584332781&redirectUri=https%3A%2F%2Ftinyurl.com%2F2mcau2x4&signature=349030976a6ef3e1adf35ff2c00e529111c05c51ae6cf5db76be5f7070ffd18a&timestamp=1697348880351&ttl=1697356080351&webhookContentType=application%2Fjson'
+    window.location.href = url
   };
 
   const handleSignUpWithGoggle = async () => {
