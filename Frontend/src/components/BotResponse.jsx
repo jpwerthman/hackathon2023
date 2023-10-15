@@ -43,11 +43,6 @@ const BotResponse = ({ response, chatLogRef }) => {
         {botResoponse}
         {botResoponse === response ? "" : "|"}
       </pre>
-      {isButtonVisible && (
-        <button className="stop-messgage" onClick={stopPrinting}>
-          {isPrinting ? "Stop Message" : "Regenerate Message"}
-        </button>
-      )}
     </>
   );
 };
