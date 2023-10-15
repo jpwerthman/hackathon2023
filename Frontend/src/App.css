@@ -139,7 +139,7 @@ nav svg {
 }
 .chatBox {
   flex: 1;
-  background-color: #e0e0e0;
+  background-color: white;
   position: relative;
   line-height: 30px;
   color: black;
@@ -211,7 +211,7 @@ nav svg {
 }
 .botMessageMainContainer {
   width: 100%;
-  background-color: #C4C4C4;
+  background-color: #e0e0e0;
   position: relative;
 }
 .botMessageWrapper {
@@ -279,15 +279,15 @@ nav svg {
   padding: 10px;
   flex: 1;
   resize: none;
-  background-color: #aeaeae;
-  color: #fff;
+  background-color: #e0e0e0;
+  color: black;
   font-size: 16px;
   outline: none;
   border: none;
   overflow-y: hidden;
 }
 form button {
-  background: #aeaeae;
+  background: #e0e0e0;
   border: none;
   position: absolute;
   top: 10%;
@@ -305,7 +305,7 @@ form button {
 }
 
 .loginContainer {
-  background: var(--primary-bg-color);
+  background: white;
   width: 100%;
   height: 100%;
   font-family: var(--text-font);
@@ -326,11 +326,13 @@ form button {
 .loginContainer h1 {
   font-size: 30px;
   margin: 0;
+  color: black;
 }
 
 .loginContainer p {
   font-size: 18px;
   line-height: 5px;
+  color: black;
 }
 
 .loginButtonWrapper {

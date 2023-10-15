@@ -32,6 +32,7 @@ const Home = () => {
       }
 
       async function callAPI() {
+        console.log(inputPrompt);
         try {
           const response = await fetch("http://localhost:8000/message", {
             method: "POST",

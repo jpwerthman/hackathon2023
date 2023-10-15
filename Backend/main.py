@@ -9,6 +9,8 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",
     "http://localhost:3001",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000"
 ]
 
 ourBot = Bot()
