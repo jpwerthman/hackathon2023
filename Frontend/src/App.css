@@ -8,7 +8,7 @@
 .App {
   font-family: var(--text-font);
   text-align: center;
-  background-color: #e0e0e0;
+  background-color: white;
   color: #fff;
   display: flex;
   position: absolute;
@@ -198,7 +198,7 @@ nav svg {
 
 .chatPromptWrapper {
   max-width: 1200px;
-  margin: auto;
+  /* margin: auto; */
   padding: 24px;
   text-align: left;
   display: flex;
@@ -216,8 +216,8 @@ nav svg {
   position: relative;
 }
 .botMessageWrapper {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 100%;
+  /* margin: auto; */
   padding: 24px;
   text-align: left;
   display: flex;
@@ -362,7 +362,7 @@ form button {
   }
 }
 
-@media screen and (max-width: 1024px) {
+
   .App {
     display: block;
   }
@@ -415,7 +415,7 @@ form button {
   #introsection h2 {
     font-size: 14px;
   }
-}
+
 
 @media screen and (min-width: 1536px) {
   .loginContainer h1 {
