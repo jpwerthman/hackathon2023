@@ -8,3 +8,7 @@ class UserMessage(BaseModel):
 class MessageResponse(BaseModel):
     status: int
     botResponse: str
+
+class AuthDetailsRequest(BaseModel):
+    username: str
+    password: str
