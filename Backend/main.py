@@ -34,7 +34,7 @@ def read_root():
 
 # Define another route with a dynamic path parameter
 @app.post("/message")
-def read_item(message: UserMessage):
+def read_item(message: UserMessage, username=Depends(auth_handler.authWrapper)):
     # Call the function that runs the conversation
     response = ourBot.run_conversation(message.message)
     print(response)
