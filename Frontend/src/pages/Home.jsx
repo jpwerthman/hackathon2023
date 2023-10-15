@@ -199,7 +199,7 @@ const Home = () => {
             ></input>
             <button aria-label="form submit" type="submit">
               <svg
-                fill="#ADACBF"
+                fill="#6e6e6e"
                 width={15}
                 height={20}
                 viewBox="0 0 32 32"
